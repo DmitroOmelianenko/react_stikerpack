@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react_stikerpack/static/css/main.2e759737.css",
+    "main.js": "/react_stikerpack/static/js/main.1b3f88ce.js",
+    "index.html": "/react_stikerpack/index.html",
+    "main.2e759737.css.map": "/react_stikerpack/static/css/main.2e759737.css.map",
+    "main.1b3f88ce.js.map": "/react_stikerpack/static/js/main.1b3f88ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e759737.css",
+    "static/js/main.1b3f88ce.js"
+  ]
+}

@@ -2,27 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import Sticker from "./Sticker";
 
-const List = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  padding: 20px;
+const Grid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
 `;
 
 function StickerList({ stickers, selected, onSelect }) {
   return (
-    <List>
+    <Grid>
       {stickers.map((s, i) => (
         <Sticker
           key={i}
           img={s.img}
           label={s.label}
           onSelect={onSelect}
-          selected={selected === s.label}
+          active={selected === s.label}
         />
       ))}
-    </List>
+    </Grid>
   );
 }
 

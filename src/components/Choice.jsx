@@ -1,38 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
-const ChoiceWrapper = styled.div`
-  margin-top: 40px;
+const Wrapper = styled.div`
+  margin-top: 20px;
+  font-size: 18px;
   text-align: center;
-  font-size: 1.3rem;
-  color: #333;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
 `;
 
-const Label = styled.span`
-  display: inline-block;
-  background: linear-gradient(135deg, #007bff, #6c63ff);
+const Selected = styled.span`
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #4c7cff;
   color: white;
-  padding: 8px 16px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  font-weight: 600;
-  margin-top: 10px;
-  transition: transform 0.3s ease;
 `;
 
 function Choice({ selected }) {
   return (
-    <ChoiceWrapper>
+    <Wrapper>
       {selected ? (
         <>
-          You chose: <Label>{selected}</Label>
+          Ви обрали: <Selected>{selected}</Selected>
         </>
       ) : (
-        "Click on a sticker to choose one 🧩"
+        "Натисніть на стікер, щоб обрати"
       )}
-    </ChoiceWrapper>
+    </Wrapper>
   );
 }
 

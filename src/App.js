@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import StickerList from "./components/StickerList";
 import Choice from "./components/Choice";
@@ -31,22 +31,35 @@ const Card = styled.div`
   max-width: 700px;
 `;
 
-function App() {
-  const [selected, setSelected] = useState("");
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: "" // зберігаємо вибраний стікер тут, але без useState
+    };
 
-  return (
-    <AppWrapper>
-      <Title>Sticker Selector 🌟</Title>
-      <Card>
-        <StickerList
-          stickers={stickersData}
-          onSelect={setSelected}
-          selected={selected}
-        />
-        <Choice selected={selected} />
-      </Card>
-    </AppWrapper>
-  );
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+
+  handleSelect(label) {
+    this.setState({ selected: label });
+  }
+
+  render() {
+    return (
+      <AppWrapper>
+        <Title>Sticker Selector 🌟</Title>
+        <Card>
+          <StickerList
+            stickers={stickersData}
+            onSelect={this.handleSelect}
+            selected={this.state.selected}
+          />
+          <Choice selected={this.state.selected} />
+        </Card>
+      </AppWrapper>
+    );
+  }
 }
 
 export default App;
